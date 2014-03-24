@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# Copyright 2014 OnStar Corporation.
+# All Rights Reserved.
+# This software is proprietary to OnStar Corporation and is protected by
+# intellectual property laws and international intellectual property treaties.
+# Your access to this software is governed by the terms of your license agreement
+# with OnStar. Any other use of the software is strictly prohibited.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical" >
+    <TextView
+        android:id="@+id/serverTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin5dp"
+        android:text="@string/mainTitle"
+        android:textSize="@dimen/serverTitleSize"
+        android:textColor="@color/white" />
+    <Button
+        android:id="@+id/updateAllBtn"
+        android:layout_width="@dimen/updateAllBtnSize"
+        android:layout_height="@dimen/updateAllBtnSize"
+        android:background="@drawable/refresh"
+        android:layout_toRightOf="@+id/serverTitle"
+        android:layout_marginLeft="@dimen/margin5dp" />
+    <ExpandableListView
+        android:id="@+id/expServerList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/serverTitle" >
+    </ExpandableListView>
+    <ProgressBar
+        android:id="@+id/progressBarBig"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
+</RelativeLayout>

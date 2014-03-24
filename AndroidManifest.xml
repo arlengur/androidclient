@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# Copyright 2014 OnStar Corporation.
+# All Rights Reserved.
+# This software is proprietary to OnStar Corporation and is protected by
+# intellectual property laws and international intellectual property treaties.
+# Your access to this software is governed by the terms of your license agreement
+# with OnStar. Any other use of the software is strictly prohibited.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.onstar.gobn.android.main"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="16" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.onstar.gobn.android.main.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

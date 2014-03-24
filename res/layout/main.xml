@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# Copyright 2014 OnStar Corporation.
+# All Rights Reserved.
+# This software is proprietary to OnStar Corporation and is protected by
+# intellectual property laws and international intellectual property treaties.
+# Your access to this software is governed by the terms of your license agreement
+# with OnStar. Any other use of the software is strictly prohibited.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/slateGray"
+    android:orientation="vertical" >
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="com.onstar.gobn.android.main.ExpandableList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/fragment" />
+</LinearLayout>

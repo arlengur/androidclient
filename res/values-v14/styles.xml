@@ -1,0 +1,20 @@
+<resources>
+<!--
+# Copyright 2014 OnStar Corporation.
+# All Rights Reserved.
+# This software is proprietary to OnStar Corporation and is protected by
+# intellectual property laws and international intellectual property treaties.
+# Your access to this software is governed by the terms of your license agreement
+# with OnStar. Any other use of the software is strictly prohibited.
+-->
+
+    <!--
+        Base application theme for API 14+. This theme completely replaces
+        AppBaseTheme from BOTH res/values/styles.xml and
+        res/values-v11/styles.xml on API 14+ devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- API 14 theme customizations can go here. -->
+    </style>
+
+</resources>

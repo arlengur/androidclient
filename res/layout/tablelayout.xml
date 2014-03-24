@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# Copyright 2014 OnStar Corporation.
+# All Rights Reserved.
+# This software is proprietary to OnStar Corporation and is protected by
+# intellectual property laws and international intellectual property treaties.
+# Your access to this software is governed by the terms of your license agreement
+# with OnStar. Any other use of the software is strictly prohibited.
+-->
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin10dp" >
+    <TableRow
+        android:id="@+id/tableRow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </TableRow>
+</TableLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# Copyright 2014 OnStar Corporation.
+# All Rights Reserved.
+# This software is proprietary to OnStar Corporation and is protected by
+# intellectual property laws and international intellectual property treaties.
+# Your access to this software is governed by the terms of your license agreement
+# with OnStar. Any other use of the software is strictly prohibited.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <TextView
+        android:id="@+id/serverName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin10dp"
+        android:layout_marginTop="@dimen/margin10dp"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical" >
+            <RadioButton
+                android:id="@+id/serverStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:clickable="false"
+                android:focusable="false" />
+            <Button
+                android:id="@+id/updateBtn"
+                android:layout_width="@dimen/updateBtnSize"
+                android:layout_height="@dimen/updateBtnSize"
+                android:layout_marginLeft="@dimen/margin5dp"
+                android:focusable="false"
+                android:background="@drawable/refresh" />
+        </LinearLayout>
+        <ProgressBar
+            android:id="@+id/progressBarNorm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:focusable="false" />
+    </RelativeLayout>
+</RelativeLayout>
