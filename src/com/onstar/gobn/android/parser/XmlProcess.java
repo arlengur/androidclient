@@ -4,15 +4,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
 
 import android.content.res.AssetManager;
 import android.os.AsyncTask;
 
-import com.onstar.gobn.android.entity.Site;
-import com.onstar.gobn.android.entity.Stack;
+import com.onstar.gobn.android.entity.Gtbt;
 
 /**
  * XmlProcess is a class for parsing XML.
@@ -24,7 +21,7 @@ import com.onstar.gobn.android.entity.Stack;
  * OnStar. Any other use of the software is strictly prohibited.
  */
 
-public class XmlProcess extends AsyncTask<Void, Void, List<Stack>> {
+public class XmlProcess extends AsyncTask<Void, Void, Gtbt> {
 
     /** Server URL variable. */
     private static final String SERVER_URL = "SERVER_URL";
@@ -71,9 +68,8 @@ public class XmlProcess extends AsyncTask<Void, Void, List<Stack>> {
     }
 
     @Override
-    protected List<Stack> doInBackground(final Void... params) {
-        List<Site> sites = new ArrayList<Site>();
-        final List<Stack> stacks = new ArrayList<Stack>();
+    protected Gtbt doInBackground(final Void... params) {
+        Gtbt gtbt = null;
         final ServerParser parser = ServerParserFactory.getParser();
         HttpURLConnection connect = null;
         InputStream is = null;
@@ -82,10 +78,7 @@ public class XmlProcess extends AsyncTask<Void, Void, List<Stack>> {
             final URL serverUrl = new URL(url_.toString());
             connect = (HttpURLConnection) serverUrl.openConnection();
             is = connect.getInputStream();
-            sites = parser.parse(is);
-            for (Site site : sites) {
-                stacks.addAll(site.getStacks());
-            }
+            gtbt = parser.parse(is);
         } catch (IOException e) {
             error_ = properties_.getProperty(ERRORS[0]);
         } catch (ParserException e) {
@@ -102,7 +95,7 @@ public class XmlProcess extends AsyncTask<Void, Void, List<Stack>> {
                 connect.disconnect();
             }
         }
-        return stacks;
+        return gtbt;
     }
 
     /**

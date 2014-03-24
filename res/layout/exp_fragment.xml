@@ -20,6 +20,15 @@
         android:text="@string/mainTitle"
         android:textSize="@dimen/serverTitleSize"
         android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/serverTitleDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin5dp"
+        android:layout_marginBottom="@dimen/margin5dp"
+        android:layout_below="@+id/serverTitle"
+        android:textColor="@color/lightgray"
+        android:textSize="@dimen/serverTitleDateSize" />
     <Button
         android:id="@+id/updateAllBtn"
         android:layout_width="@dimen/updateAllBtnSize"
@@ -32,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/serverTitle" >
+        android:layout_below="@+id/serverTitleDate" >
     </ExpandableListView>
     <ProgressBar
         android:id="@+id/progressBarBig"

@@ -17,7 +17,10 @@ import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import com.onstar.gobn.android.entity.Gtbt;
+import com.onstar.gobn.android.entity.Site;
 import com.onstar.gobn.android.entity.Stack;
 import com.onstar.gobn.android.parser.XmlProcess;
 
@@ -55,7 +58,7 @@ public class ExpandableList extends Fragment implements OnClickListener {
                 @Override
                 public void run() {
                     handler_.post(loadListData(true, v));
-                    stacks_.addAll(getData());
+                    stacks_.addAll(getData(v));
                     handler_.post(notifyList());
                     handler_.post(loadListData(false, v));
                 }
@@ -161,7 +164,7 @@ public class ExpandableList extends Fragment implements OnClickListener {
                 handler_.post(updateListView(true, v));
 
                 stacks_.clear();
-                stacks_.addAll(getData());
+                stacks_.addAll(getData(v));
 
                 handler_.post(notifyList());
                 handler_.post(updateListView(false, v));
@@ -174,14 +177,19 @@ public class ExpandableList extends Fragment implements OnClickListener {
      * Receives new data from the server.
      * @return updated data from the server
      */
-    private List<Stack> getData() {
+    private List<Stack> getData(View v) {
         final AssetManager assetManager = getActivity().getResources().getAssets();
         final XmlProcess xmlProcess = new XmlProcess(assetManager);
         xmlProcess.execute();
 
         final List<Stack> newStacks = new ArrayList<Stack>();
         try {
-            newStacks.addAll(xmlProcess.get());
+            Gtbt gtbt = xmlProcess.get();
+            handler_.post(updateDate(v, gtbt.getTimeStamp()));
+            List<Site> sites = gtbt.getSites();
+            for(Site site:sites){
+                newStacks.addAll(site.getStacks());
+            }
         } catch (InterruptedException e) {
             // NOPMD
         } catch (ExecutionException e) {
@@ -192,5 +200,20 @@ public class ExpandableList extends Fragment implements OnClickListener {
             handler_.post(showMessage(xmlProcess.getError()));
         }
         return newStacks;
+    }
+
+    /**
+     * Notify expandable list view.
+     * @return runnable
+     */
+    private Runnable updateDate(final View v, final String date) {
+        final Runnable temp = new Runnable() {
+            @Override
+            public void run() {
+                final TextView titleDate = (TextView) v.findViewById(R.id.serverTitleDate);
+                titleDate.setText("updated: "+date);
+            }
+        };
+        return temp;
     }
 }

@@ -7,6 +7,7 @@ import java.util.concurrent.ExecutionException;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Handler;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,7 +24,9 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.onstar.gobn.android.entity.Cluster;
+import com.onstar.gobn.android.entity.Gtbt;
 import com.onstar.gobn.android.entity.Server;
+import com.onstar.gobn.android.entity.Site;
 import com.onstar.gobn.android.entity.Stack;
 import com.onstar.gobn.android.parser.XmlProcess;
 
@@ -40,6 +43,8 @@ import com.onstar.gobn.android.parser.XmlProcess;
 public class ExpandableAdapter extends BaseExpandableListAdapter implements OnClickListener {
     /** Variable to store server status. */
     public static final String SERVER_STATUS = "UP";
+    /** Variable to store server monitor status. */
+    public static final String SERVER_MONITOR = "NOTMONITORED";
     /** Variable to store data for the ExpandableListView. */
     private transient List<Stack> stacks_;
     /** Variable for the LayoutInflater. */
@@ -86,14 +91,17 @@ public class ExpandableAdapter extends BaseExpandableListAdapter implements OnCl
         rl.addView(ll, llParam);
 
         final Stack stack = stacks_.get(groupPosition);
-
-        ((TextView) tempView.findViewById(R.id.serverName)).setText(stack.getId());
+        final StringBuffer serverName = new StringBuffer(stack.getId());
 
         if ("OK".equals(stack.getStatus())) {
             ((RadioButton) tempView.findViewById(R.id.serverStatus)).setChecked(true);
         } else {
+            if(SERVER_MONITOR.equals(stack.getStatus())) {
+                serverName.append("<font color=#354D73> -- Not monitored -- </font>");
+            }
             ((RadioButton) tempView.findViewById(R.id.serverStatus)).setChecked(false);
         }
+        ((TextView) tempView.findViewById(R.id.serverName)).setText(Html.fromHtml(serverName.toString()));
 
         final List<Cluster> clusters = stack.getClusters();
         for (Cluster cluster : clusters) {
@@ -271,6 +279,22 @@ public class ExpandableAdapter extends BaseExpandableListAdapter implements OnCl
         return temp;
     }
 
+    /**
+     * Notify expandable list view.
+     * @return runnable
+     */
+    private Runnable updateDate(final String date) {
+        final Runnable temp = new Runnable() {
+            @Override
+            public void run() {
+                View tempView = lInflater_.inflate(R.layout.exp_fragment, null);
+                final TextView titleDate = (TextView) tempView.findViewById(R.id.serverTitleDate);
+                titleDate.setText("updated: "+date);
+            }
+        };
+        return temp;
+    }
+
     @Override
     public void onClick(final View v) {
         final Thread t = new Thread(new Runnable() {
@@ -286,15 +310,21 @@ public class ExpandableAdapter extends BaseExpandableListAdapter implements OnCl
 
                 List<Stack> newStacks = new ArrayList<Stack>();
                 try {
-                    newStacks = xmlProcess.get();
+                    Gtbt gtbt =xmlProcess.get();
+                    handler_.post(updateDate(gtbt.getTimeStamp()));
+                    List<Site> sites = gtbt.getSites();
+                    for(Site site:sites){
+                        newStacks.addAll(site.getStacks());
+                    }
                 } catch (InterruptedException e) {
                     // NOPMD
                 } catch (ExecutionException e) {
                     // NOPMD
                 }
-
-                stacks_.set(position, newStacks.get(0));
-
+                // checking emptiness
+                if (newStacks.size() > 0) {
+                    stacks_.set(position, newStacks.get(0));
+                }
                 handler_.post(notifyList(adapter_));
                 handler_.post(updateListView(false, v));
             }

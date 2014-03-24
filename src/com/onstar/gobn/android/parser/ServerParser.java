@@ -1,9 +1,8 @@
 package com.onstar.gobn.android.parser;
 
 import java.io.InputStream;
-import java.util.List;
 
-import com.onstar.gobn.android.entity.Site;
+import com.onstar.gobn.android.entity.Gtbt;
 
 /**
  * ServerParser is a interface for parsing XML.
@@ -22,5 +21,5 @@ public interface ServerParser {
      * @return XML parsing result
      * @throws ParserException in case of parse exception
      */
-    List<Site> parse(InputStream is) throws ParserException;
+    Gtbt parse(InputStream is) throws ParserException;
 }

@@ -9,9 +9,8 @@
 -->
 <resources>
     <color name="slateGray">#252020</color>
-    <color name="lightGreenishBlue">#649A9E</color>
-    <color name="brightBlueGreen">#669E85</color>
     <color name="white">#FFFFFF</color>
-    <color name="black">#000000</color>
     <color name="gray">#171717</color>
+    <color name="lightgray">#505050</color>
+    <color name="black">#000000</color>
 </resources>

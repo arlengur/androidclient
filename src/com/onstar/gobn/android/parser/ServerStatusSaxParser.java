@@ -2,17 +2,9 @@ package com.onstar.gobn.android.parser;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
-
-import com.onstar.gobn.android.entity.Cluster;
-import com.onstar.gobn.android.entity.Server;
-import com.onstar.gobn.android.entity.Site;
-import com.onstar.gobn.android.entity.Stack;
-
 
 import android.sax.Element;
 import android.sax.EndElementListener;
@@ -20,6 +12,12 @@ import android.sax.EndTextElementListener;
 import android.sax.RootElement;
 import android.sax.StartElementListener;
 import android.util.Xml;
+
+import com.onstar.gobn.android.entity.Cluster;
+import com.onstar.gobn.android.entity.Gtbt;
+import com.onstar.gobn.android.entity.Server;
+import com.onstar.gobn.android.entity.Site;
+import com.onstar.gobn.android.entity.Stack;
 
 /**
  * AndroidSaxParser is a class implements an interface parsing XML.
@@ -55,9 +53,9 @@ public class ServerStatusSaxParser implements ServerParser {
     public static final String TYPE = "Type";
 
     @Override
-    public List<Site> parse(final InputStream is) throws ParserException {
+    public Gtbt parse(final InputStream is) throws ParserException {
         final RootElement root = new RootElement(GTBT);
-        final List<Site> gtbt = new ArrayList<Site>();
+        final Gtbt gtbt = new Gtbt();
         final Site currentSite = new Site();
         final Stack currentStack = new Stack();
         final Cluster currentCluster = new Cluster();
@@ -67,13 +65,20 @@ public class ServerStatusSaxParser implements ServerParser {
         final Element cluster = stack.getChild(SERVER_CLISTER);
         final Element server = cluster.getChild(SERVER);
 
+        root.setStartElementListener(new StartElementListener() {
+            @Override
+            public void start(final Attributes attributes) {
+                gtbt.setTimeStamp(attributes.getValue(0));
+            }
+        });
+
         site.setEndElementListener(new EndElementListener() {
             @Override
             public void end() {
                 try {
-                    gtbt.add(currentSite.cloneAndReset());
+                    gtbt.getSites().add(currentSite.cloneAndReset());
                 } catch (CloneNotSupportedException e) {
-                    //NOPMD
+                    // NOPMD
                 }
             }
         });

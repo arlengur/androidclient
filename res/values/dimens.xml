@@ -15,4 +15,5 @@
     <dimen name="margin5dp">5dp</dimen>
     <dimen name="margin10dp">10dp</dimen>
     <dimen name="serverTitleSize">22sp</dimen>
+    <dimen name="serverTitleDateSize">12sp</dimen>
 </resources>
