@@ -42,9 +42,11 @@ import com.onstar.gobn.android.parser.XmlProcess;
 
 public class ExpandableAdapter extends BaseExpandableListAdapter implements OnClickListener {
     /** Variable to store server status. */
-    public static final String SERVER_STATUS = "UP";
+    public static final String SERVER_UP = "UP";
     /** Variable to store server monitor status. */
-    public static final String SERVER_MONITOR = "NOTMONITORED";
+    public static final String SERVER_NOTMONITORED = "NOTMONITORED";
+    /** Variable describes server monitor status. */
+    public static final String STACK_NOTMONITORED = "<font color=#354D73> -- Not monitored -- </font>";
     /** Variable to store data for the ExpandableListView. */
     private transient List<Stack> stacks_;
     /** Variable for the LayoutInflater. */
@@ -96,8 +98,8 @@ public class ExpandableAdapter extends BaseExpandableListAdapter implements OnCl
         if ("OK".equals(stack.getStatus())) {
             ((RadioButton) tempView.findViewById(R.id.serverStatus)).setChecked(true);
         } else {
-            if(SERVER_MONITOR.equals(stack.getStatus())) {
-                serverName.append("<font color=#354D73> -- Not monitored -- </font>");
+            if (SERVER_NOTMONITORED.equals(stack.getStatus())) {
+                serverName.append(STACK_NOTMONITORED);
             }
             ((RadioButton) tempView.findViewById(R.id.serverStatus)).setChecked(false);
         }
@@ -211,7 +213,7 @@ public class ExpandableAdapter extends BaseExpandableListAdapter implements OnCl
             rb.setClickable(false);
             rb.setFocusable(false);
 
-            if (SERVER_STATUS.equals(server.getStatus())) {
+            if (SERVER_UP.equals(server.getStatus())) {
                 rb.setChecked(true);
             } else {
                 rb.setChecked(false);
@@ -231,7 +233,7 @@ public class ExpandableAdapter extends BaseExpandableListAdapter implements OnCl
             rb.setClickable(false);
             rb.setFocusable(false);
 
-            if (SERVER_STATUS.equals(server.getStatus())) {
+            if (SERVER_UP.equals(server.getStatus())) {
                 rb.setChecked(true);
             } else {
                 rb.setChecked(false);
@@ -280,19 +282,19 @@ public class ExpandableAdapter extends BaseExpandableListAdapter implements OnCl
     }
 
     /**
-     * Notify expandable list view.
+     * Updates date.
      * @return runnable
      */
     private Runnable updateDate(final String date) {
-        final Runnable temp = new Runnable() {
+        final Runnable newDate = new Runnable() {
             @Override
             public void run() {
                 View tempView = lInflater_.inflate(R.layout.exp_fragment, null);
                 final TextView titleDate = (TextView) tempView.findViewById(R.id.serverTitleDate);
-                titleDate.setText("updated: "+date);
+                titleDate.setText("updated: " + date);
             }
         };
-        return temp;
+        return newDate;
     }
 
     @Override
@@ -310,19 +312,18 @@ public class ExpandableAdapter extends BaseExpandableListAdapter implements OnCl
 
                 List<Stack> newStacks = new ArrayList<Stack>();
                 try {
-                    Gtbt gtbt =xmlProcess.get();
+                    final Gtbt gtbt = xmlProcess.get();
                     handler_.post(updateDate(gtbt.getTimeStamp()));
-                    List<Site> sites = gtbt.getSites();
-                    for(Site site:sites){
+                    for (Site site : gtbt.getSites()) {
                         newStacks.addAll(site.getStacks());
                     }
                 } catch (InterruptedException e) {
-                    // NOPMD
+                    //NOPMD
                 } catch (ExecutionException e) {
-                    // NOPMD
+                    //NOPMD
                 }
-                // checking emptiness
-                if (newStacks.size() > 0) {
+                // Do not noting if List is empty
+                if (!newStacks.isEmpty()) {
                     stacks_.set(position, newStacks.get(0));
                 }
                 handler_.post(notifyList(adapter_));

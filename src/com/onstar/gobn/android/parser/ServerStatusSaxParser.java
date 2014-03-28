@@ -78,7 +78,7 @@ public class ServerStatusSaxParser implements ServerParser {
                 try {
                     gtbt.getSites().add(currentSite.cloneAndReset());
                 } catch (CloneNotSupportedException e) {
-                    // NOPMD
+                    //NOPMD
                 }
             }
         });

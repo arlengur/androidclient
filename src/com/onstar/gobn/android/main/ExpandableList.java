@@ -175,19 +175,19 @@ public class ExpandableList extends Fragment implements OnClickListener {
 
     /**
      * Receives new data from the server.
+     * @param v - view
      * @return updated data from the server
      */
-    private List<Stack> getData(View v) {
+    private List<Stack> getData(final View v) {
         final AssetManager assetManager = getActivity().getResources().getAssets();
         final XmlProcess xmlProcess = new XmlProcess(assetManager);
         xmlProcess.execute();
 
         final List<Stack> newStacks = new ArrayList<Stack>();
         try {
-            Gtbt gtbt = xmlProcess.get();
+            final Gtbt gtbt = xmlProcess.get();
             handler_.post(updateDate(v, gtbt.getTimeStamp()));
-            List<Site> sites = gtbt.getSites();
-            for(Site site:sites){
+            for (Site site : gtbt.getSites()) {
                 newStacks.addAll(site.getStacks());
             }
         } catch (InterruptedException e) {
@@ -203,17 +203,21 @@ public class ExpandableList extends Fragment implements OnClickListener {
     }
 
     /**
-     * Notify expandable list view.
+     * Updates date.
      * @return runnable
      */
     private Runnable updateDate(final View v, final String date) {
-        final Runnable temp = new Runnable() {
+        final Runnable newDate = new Runnable() {
             @Override
             public void run() {
-                final TextView titleDate = (TextView) v.findViewById(R.id.serverTitleDate);
-                titleDate.setText("updated: "+date);
+                TextView titleDate = (TextView) v.findViewById(R.id.serverTitleDate);
+                if (titleDate == null) {
+                    final RelativeLayout rl = (RelativeLayout) v.getParent();
+                    titleDate = (TextView) rl.findViewById(R.id.serverTitleDate);
+                }
+                titleDate.setText("updated: " + date);
             }
         };
-        return temp;
+        return newDate;
     }
 }

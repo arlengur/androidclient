@@ -50,7 +50,7 @@ public class XmlProcess extends AsyncTask<Void, Void, Gtbt> {
                 try {
                     is.close();
                 } catch (IOException e) {
-                    // NOPMD
+                    //NOPMD
                 }
             }
         }
@@ -88,7 +88,7 @@ public class XmlProcess extends AsyncTask<Void, Void, Gtbt> {
                 try {
                     is.close();
                 } catch (IOException e) {
-                    // NOPMD
+                    //NOPMD
                 }
             }
             if (connect != null) {

@@ -25,7 +25,7 @@ public class Gtbt {
     }
 
     /**
-     * Gets for the timeStamp.
+     * Gets the timeStamp.
      * @return timeStamp
      */
     public String getTimeStamp() {
@@ -33,7 +33,7 @@ public class Gtbt {
     }
 
     /**
-     * Sets for the timeStamp_.
+     * Sets the timeStamp.
      * @param timeStamp - date of creating XML
      */
     public void setTimeStamp(final String timeStamp) {
@@ -41,7 +41,7 @@ public class Gtbt {
     }
 
     /**
-     * Gets for the sites.
+     * Gets the sites.
      * @return sites
      */
     public List<Site> getSites() {
@@ -49,7 +49,7 @@ public class Gtbt {
     }
 
     /**
-     * Sets for the sites.
+     * Sets the sites.
      * @param sites - sites of the gtbt
      */
     public void setSites(final List<Site> sites) {
