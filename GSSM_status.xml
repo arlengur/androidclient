@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GTBT TimeStamp="1392625208">
+  <Site ID="IDT">
+    <Stack ID="IDT0001" Status="OK" TestResult="ARV-Interface Test passed&lt;br&gt;ARV-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;">
+      <Description>IDT1 Deployment - Support Gen 10</Description>
+      <Server_Cluster Type="Core">
+        <Server Status="UP">
+          <Address>164.56.228.243</Address>
+          <Name>onsrni1agtbt1</Name>
+          <Port>14110</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.122.16</Address>
+          <Name>onsrni1agtbt2</Name>
+          <Port>14110</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>164.56.228.242</Address>
+          <Name>onsrni1agtbt3</Name>
+          <Port>14300</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.228.240</Address>
+          <Name>onsrni1agtbt4</Name>
+          <Port>14300</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Traffic">
+        <Server Status="UP">
+          <Address>164.56.228.244</Address>
+          <Name>onsrni1agtbt5</Name>
+          <Port>14110</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.228.245</Address>
+          <Name>onsrni1agtbt6</Name>
+          <Port>14110</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>NA</Type>
+    </Stack>
+    <Stack ID="IDT0002" Status="OK" TestResult="ARV-Interface Test passed&lt;br&gt;ARV-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;">
+      <Description>IDT2 Deployment - Support - R4.6 </Description>
+      <Server_Cluster Type="Core">
+        <Server Status="UP">
+          <Address>164.56.228.182</Address>
+          <Name>onsrni2gtbt1</Name>
+          <Port>14110</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.228.183</Address>
+          <Name>onsrni2gtbt2</Name>
+          <Port>14110</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>164.56.228.178</Address>
+          <Name>onsrni2gtbt3</Name>
+          <Port>14300</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.228.179</Address>
+          <Name>onsrni2gtbt4</Name>
+          <Port>14300</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Traffic">
+        <Server Status="UP">
+          <Address>164.56.228.184</Address>
+          <Name>onsrni2gtbt5</Name>
+          <Port>14110</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.228.185</Address>
+          <Name>onsrni2gtbt6</Name>
+          <Port>14110</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>NA</Type>
+    </Stack>
+    <Stack ID="IDT0003" Status="OK" TestResult="ARV-Interface Test passed&lt;br&gt;ARV-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;">
+      <Description>IDT3 (SIT1) Deployment</Description>
+      <Server_Cluster Type="Core">
+        <Server Status="UP">
+          <Address>164.56.105.39</Address>
+          <Name>onsrn4sitgtbt1</Name>
+          <Port>14110</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.105.40</Address>
+          <Name>onsrn4sitgtbt2</Name>
+          <Port>14110</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>164.56.105.43</Address>
+          <Name>onsrn4sitgtbt5</Name>
+          <Port>14300</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.105.44</Address>
+          <Name>onsrn4sitgtbt6</Name>
+          <Port>14300</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Traffic">
+        <Server Status="UP">
+          <Address>164.56.105.126</Address>
+          <Name>onsrn4sitgtbt7</Name>
+          <Port>14110</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.105.127</Address>
+          <Name>onsrn4sitgtbt8</Name>
+          <Port>14110</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>NA</Type>
+    </Stack>
+    <Stack ID="IDT0004" Status="OK" TestResult="ARV-Interface Test passed&lt;br&gt;ARV-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;">
+      <Description>IDT4 (SIT2) Deployment - Support Gen 10</Description>
+      <Server_Cluster Type="Core">
+        <Server Status="UP">
+          <Address>164.56.105.128</Address>
+          <Name>onsrn4sitgtbt10</Name>
+          <Port>14110</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.105.129</Address>
+          <Name>onsrn4sitgtbt11</Name>
+          <Port>14110</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>164.56.105.141</Address>
+          <Name> onsrn4sitgtbt14</Name>
+          <Port>14300</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.105.142</Address>
+          <Name>onsrn4sitgtbt15</Name>
+          <Port>14300</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Traffic">
+        <Server Status="UP">
+          <Address>164.56.105.130</Address>
+          <Name>onsrn4sitgtbt16</Name>
+          <Port>14110</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.105.131</Address>
+          <Name>onsrn4sitgtbt17</Name>
+          <Port>14110</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>NA</Type>
+    </Stack>
+    <Stack ID="IDT0005" Status="OK" TestResult="ARV-Interface Test passed&lt;br&gt;ARV-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;">
+      <Description>IDT5 Deployment - Support R4.5 Global</Description>
+      <Server_Cluster Type="Core">
+        <Server Status="UP">
+          <Address>164.56.226.239</Address>
+          <Name>onsrn4idt5gtbt1</Name>
+          <Port>14110</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.226.240</Address>
+          <Name>onsrn4idt5gtbt2</Name>
+          <Port>14110</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>164.56.226.235</Address>
+          <Name>onsrn4IDT5gtbt3</Name>
+          <Port>14300</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.226.236</Address>
+          <Name>onsrn4IDT5gtbt4</Name>
+          <Port>14300</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Traffic">
+        <Server Status="UP">
+          <Address>164.56.226.241</Address>
+          <Name>onsrn4idt5gtbt5</Name>
+          <Port>14110</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.226.242</Address>
+          <Name>onsrn4idt5gtbt6</Name>
+          <Port>14110</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>NA</Type>
+    </Stack>
+    <Stack ID="IDT0006" Status="OK" TestResult="ARV-Interface Test passed&lt;br&gt;ARV-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;">
+      <Description>IDT6 China SIT Deployment</Description>
+      <Server_Cluster Type="Core">
+        <Server Status="UP">
+          <Address>164.56.105.169</Address>
+          <Name>onsrn4cSITtbt1</Name>
+          <Port>14110</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.105.170</Address>
+          <Name>onsrn4cSITtbt2</Name>
+          <Port>14110</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Proxy">
+        <Server Status="UP">
+          <Address>192.168.7.164</Address>
+          <Name>sunbird</Name>
+          <Port>7991</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>164.56.105.192</Address>
+          <Name>onsrn4cSITtbt3</Name>
+          <Port>14300</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.105.193</Address>
+          <Name>onsrn4cSITtbt4</Name>
+          <Port>14300</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>China AutoNavi</Type>
+    </Stack>
+    <Stack ID="IDT0007" Status="OK" TestResult="ARV-Interface Test passed&lt;br&gt;ARV-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;">
+      <Description>IDT7 China Deployment</Description>
+      <Server_Cluster Type="Core">
+        <Server Status="UP">
+          <Address>164.56.227.252</Address>
+          <Name>onsrn4idt7gtbt1</Name>
+          <Port>14110</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.227.253</Address>
+          <Name>onsrn4idt7gtbt2</Name>
+          <Port>14110</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>164.56.227.252</Address>
+          <Name>164.56.227.252</Name>
+          <Port>14300</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.227.253</Address>
+          <Name>164.56.227.253</Name>
+          <Port>14300</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>China CenNavi</Type>
+    </Stack>
+    <Stack ID="IDT0008" Status="OK" TestResult="ARV-Interface Test passed&lt;br&gt;ARV-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;">
+      <Description>IDT8 Deployment</Description>
+      <Server_Cluster Type="Core">
+        <Server Status="UP">
+          <Address>164.56.228.132</Address>
+          <Name>onsrni8agtbt1</Name>
+          <Port>14110</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.228.133</Address>
+          <Name>onsrni8agtbt2</Name>
+          <Port>14110</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>164.56.228.151</Address>
+          <Name>onsrni8agtbt3</Name>
+          <Port>14300</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.228.140</Address>
+          <Name>onsrni8agtbt4</Name>
+          <Port>14300</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Traffic">
+        <Server Status="UP">
+          <Address>164.56.228.134</Address>
+          <Name>onsrni8agtbt5</Name>
+          <Port>14110</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.228.135</Address>
+          <Name>onsrni8agtbt6</Name>
+          <Port>14110</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>NA</Type>
+    </Stack>
+    <Stack ID="IDT0009" Status="OK" TestResult="ARV-Interface Test passed&lt;br&gt;ARV-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;">
+      <Description>VehVal (Old IDT2) Deployment</Description>
+      <Server_Cluster Type="Core">
+        <Server Status="UP">
+          <Address>164.56.105.31</Address>
+          <Name>onsrn4devgtbt10</Name>
+          <Port>14110</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.105.32</Address>
+          <Name>onsrn4devgtbt11</Name>
+          <Port>14110</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>164.56.105.35</Address>
+          <Name>onsrn4devgtbt14</Name>
+          <Port>14300</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.105.36</Address>
+          <Name>onsrn4devgtbt15</Name>
+          <Port>14300</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Traffic">
+        <Server Status="UP">
+          <Address>164.56.105.37</Address>
+          <Name>onsrn4devgtbt16</Name>
+          <Port>14110</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.105.38</Address>
+          <Name>onsrn4devgtbt17</Name>
+          <Port>14110</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>NA</Type>
+    </Stack>
+    <Stack ID="IDT0010" Status="OK" TestResult="ARV-Interface Test passed&lt;br&gt;ARV-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;">
+      <Description>Dev1 Deployment</Description>
+      <Server_Cluster Type="Core">
+        <Server Status="UP">
+          <Address>164.56.105.22</Address>
+          <Name>onsrn4devgtbt1</Name>
+          <Port>14110</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.105.23</Address>
+          <Name>onsrn4devgtbt2</Name>
+          <Port>14110</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>164.56.105.26</Address>
+          <Name>onsrn4devgtbt5</Name>
+          <Port>14300</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.105.27</Address>
+          <Name>onsrn4devgtbt6</Name>
+          <Port>14300</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Traffic">
+        <Server Status="UP">
+          <Address>164.56.105.28</Address>
+          <Name>onsrn4devgtbt7</Name>
+          <Port>14110</Port>
+        </Server>
+        <Server Status="UP">
+          <Address>164.56.105.29</Address>
+          <Name>onsrn4devgtbt8</Name>
+          <Port>14110</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>NA</Type>
+    </Stack>
+  </Site>
+  <Site ID="PHX">
+    <Stack ID="PHX0001" Status="Not OK" TestResult="B-Interface Test failed&lt;br&gt;ARV-Interface Test failed&lt;br&gt;">
+      <Description>Debug Stack</Description>
+      <Server_Cluster Type="Core">
+        <Server Status="DOWN">
+          <Address>130.173.218.152</Address>
+          <Name>w103d@suse11-app2</Name>
+          <Port>8997</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="DB">
+        <Server Status="UP">
+          <Address>192.168.7.21</Address>
+          <Name>192.168.7.21:1521:db4</Name>
+          <Port>1521</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>130.173.218.49</Address>
+          <Name>u2008@rh64</Name>
+          <Port>2008</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Traffic">
+        <Server Status="DOWN">
+          <Address>130.173.218.152</Address>
+          <Name>w103d@suse11-app2</Name>
+          <Port>8997</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>NA</Type>
+    </Stack>
+    <Stack ID="PHX0002" Status="OK" TestResult="ARV-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;">
+      <Description>Admin Stack</Description>
+      <Server_Cluster Type="Core">
+        <Server Status="UP">
+          <Address>192.168.7.52</Address>
+          <Name>w103d@suse11-app6</Name>
+          <Port>8997</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>192.168.7.52</Address>
+          <Name>u2004@suse11-app6</Name>
+          <Port>2004</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Traffic">
+        <Server Status="UP">
+          <Address>192.168.7.52</Address>
+          <Name>w103d@suse11-app6</Name>
+          <Port>8997</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>China CenNavi</Type>
+    </Stack>
+    <Stack ID="PHX0003" Status="OK" TestResult="ARV-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;">
+      <Description>NA Daily Build</Description>
+      <Server_Cluster Type="Core">
+        <Server Status="UP">
+          <Address>192.168.7.49</Address>
+          <Name>w103z@suse11-app4</Name>
+          <Port>8597</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>192.168.7.12</Address>
+          <Name>u2001@rh64-nav1</Name>
+          <Port>2001</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Traffic">
+        <Server Status="UP">
+          <Address>192.168.7.49</Address>
+          <Name>w103z@suse11-app4</Name>
+          <Port>8597</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>NA</Type>
+    </Stack>
+    <Stack ID="PHX0004" Status="OK" TestResult="ARV-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;">
+      <Description>China (AutoNavi) Daily Build</Description>
+      <Server_Cluster Type="Core">
+        <Server Status="UP">
+          <Address>192.168.7.48</Address>
+          <Name>w103a@suse11-app3</Name>
+          <Port>8697</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Proxy">
+        <Server Status="UP">
+          <Address>192.168.7.37</Address>
+          <Name>idbadm@solaris1064</Name>
+          <Port>7991</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>192.168.7.223</Address>
+          <Name>idbadm@sun-wlsclus4a</Name>
+          <Port>1901</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>China AutoNavi</Type>
+    </Stack>
+    <Stack ID="PHX0005" Status="OK" TestResult="ARV-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;">
+      <Description>China (CenNavi) Daily Build</Description>
+      <Server_Cluster Type="Core">
+        <Server Status="UP">
+          <Address>192.168.7.53</Address>
+          <Name>w103x@suse11-app7</Name>
+          <Port>8397</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>192.168.7.53</Address>
+          <Name>u2002@suse11-app7</Name>
+          <Port>2002</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>China CenNavi</Type>
+    </Stack>
+    <Stack ID="PHX0006" Status="OK" TestResult="ARV-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;">
+      <Description>PHX Stack-1</Description>
+      <Server_Cluster Type="Core">
+        <Server Status="UP">
+          <Address>192.168.7.73</Address>
+          <Name>pntsit-wlsclus3a</Name>
+          <Port>8297</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>192.168.7.49</Address>
+          <Name>u2007@suse11-app4</Name>
+          <Port>2007</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>NA</Type>
+    </Stack>
+    <Stack ID="PHX0007" Status="OK" TestResult="B-Interface Test passed&lt;br&gt;ARV-Interface Test passed&lt;br&gt;">
+      <Description>PHX Stack-2</Description>
+      <Server_Cluster Type="Core">
+        <Server Status="UP">
+          <Address>192.168.7.39</Address>
+          <Name>Bgtbt103@pntsit-wlschina</Name>
+          <Port>8297</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Proxy">
+        <Server Status="UP">
+          <Address>192.168.7.165</Address>
+          <Name>sunbirdz1</Name>
+          <Port>7991</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>192.168.7.39</Address>
+          <Name>idbadm@pntsit-wlschina</Name>
+          <Port>1901</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>China AutoNavi</Type>
+    </Stack>
+    <Stack ID="PHX0008" Status="OK" TestResult="ARV-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;">
+      <Description>PHX Stack-3 China (CenNavi) Engineering</Description>
+      <Server_Cluster Type="Core">
+        <Server Status="UP">
+          <Address>192.168.7.49</Address>
+          <Name>w103y@suse11-app4</Name>
+          <Port>8497</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>192.168.7.49</Address>
+          <Name>u2002@suse11-app4</Name>
+          <Port>2002</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>China CenNavi</Type>
+    </Stack>
+    <Stack ID="PHX0009" Status="OK" TestResult="ARV-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;">
+      <Description>PHX Stack-4 HMI Engineering</Description>
+      <Server_Cluster Type="Core">
+        <Server Status="UP">
+          <Address>192.168.7.49</Address>
+          <Name>w103a@suse11-app4</Name>
+          <Port>8697</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>192.168.7.49</Address>
+          <Name>u2001@suse11-app4</Name>
+          <Port>2001</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>NA</Type>
+    </Stack>
+    <Stack ID="PHX0010" Status="OK" TestResult="ARV-Interface Test passed&lt;br&gt;B-Interface Test passed&lt;br&gt;">
+      <Description>PHX Stack-5 Engineering Mirror</Description>
+      <Server_Cluster Type="Core">
+        <Server Status="UP">
+          <Address>192.168.7.49</Address>
+          <Name>w103d@suse11-app4</Name>
+          <Port>8997</Port>
+        </Server>
+      </Server_Cluster>
+      <Server_Cluster Type="Route">
+        <Server Status="UP">
+          <Address>192.168.7.49</Address>
+          <Name>u2007@suse11-app4</Name>
+          <Port>2007</Port>
+        </Server>
+      </Server_Cluster>
+      <Type>NA</Type>
+    </Stack>
+  </Site>
+</GTBT>
